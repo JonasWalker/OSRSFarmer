@@ -32,6 +32,11 @@ namespace OSRSFarmer
         int bankBoothAtBankBoothX = 865;
         int bankBoothAtBankBoothY = 530;
 
+        int inventorySlot1X = 1697;
+        int inventorySlot1Y = 764;
+
+        // Willow Tree
+
         int willowTreeAtBankBoothX = 415;
         int willowTreeAtBankBoothY = 850;
 
@@ -41,17 +46,34 @@ namespace OSRSFarmer
         int bankBoothAtWillowTreeX = 1406;
         int bankBoothAtWillowTreeY = 317;
 
-        int oakTreeAtOakTreeX = 1084;
-        int oakTreeAtOakTreeY = 603;
+        // Oak Tree
 
-        int bankBoothAtOakTreeX = 230;
-        int bankBoothAtOakTreeY = 652;
+        int oakTreeAtOakTreeX = 1011;
+        int oakTreeAtOakTreeY = 562;
 
-        int oakTreeAtBankBoothX = 1646;
-        int oakTreeAtBankBoothY = 488;
+        int bankBoothAtOakTreeX = 601;
+        int bankBoothAtOakTreeY = 588;
 
-        int inventorySlot1X = 1697;
-        int inventorySlot1Y = 764;
+        int oakTreeAtBankBoothX = 1285;
+        int oakTreeAtBankBoothY = 502;
+
+        // Oak Tree for Surface
+
+        int bankBoothAtBankBoothXSurface = 758;
+        int bankBoothAtBankBoothYSurface = 526;
+
+        int inventorySlot1XSurface = 1398;
+        int inventorySlot1YSurface = 766;
+
+        int oakTreeAtOakTreeXSurface = 860;
+        int oakTreeAtOakTreeYSurface = 560;
+
+        int bankBoothAtOakTreeXSurface = 450;
+        int bankBoothAtOakTreeYSurface = 579;
+
+        int oakTreeAtBankBoothXSurface = 1133;
+        int oakTreeAtBankBoothYSurface = 508;
+
 
 
         //takes 12 second to walk from bankbooth to tree
@@ -78,8 +100,9 @@ namespace OSRSFarmer
         }
 
         //Left Clicks
-        public static void DoMouseLeftClick()
+        public  void DoMouseLeftClick()
         {
+            WaitSomeTime(2000);
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
         }
 
@@ -155,7 +178,7 @@ namespace OSRSFarmer
         private void timer1_Tick(object sender, EventArgs e)
         {
             _ticks++;
-            timerLabel.Text = _ticks.ToString();
+            //timerLabel.Text = _ticks.ToString();
         }
 
         private void timerButton_Click(object sender, EventArgs e)
@@ -177,7 +200,7 @@ namespace OSRSFarmer
         private void oakTreeButton_Click(object sender, EventArgs e)
         {
             //start timer
-            timer1.Start();
+            //timer1.Start();
 
             //Place character in a certain position (infront of bank booth)
             //Click start
@@ -196,29 +219,105 @@ namespace OSRSFarmer
                 PlaceMouse(oakTreeAtOakTreeX, oakTreeAtOakTreeY);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 20 seconds
-                WaitSomeTime(20000);
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeX, oakTreeAtOakTreeY);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 20 seconds
-                WaitSomeTime(20000);
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeX, oakTreeAtOakTreeY);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 20 seconds
-                WaitSomeTime(20000);
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeX, oakTreeAtOakTreeY);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 50 seconds
+                WaitSomeTime(50000);
                 ///////////inventory should be full/////////
                 //place cursor on bank booth
                 PlaceMouse(bankBoothAtOakTreeX, bankBoothAtOakTreeY);
                 //DoMouseLeftClick on bank booth(makes you walk towards booth and opens your bank)
                 DoMouseLeftClick();
-                //Wait 20 seconds
-                WaitSomeTime(20000);
+                //Wait 15 seconds 
+                WaitSomeTime(15000);
                 //move cursor to inventory on slot 1
                 PlaceMouse(inventorySlot1X, inventorySlot1Y);
                 //DoMouseLeftClick on slot 1(to empty inventory)
                 DoMouseLeftClick();
+                //Wait 3 seconds 
+                WaitSomeTime(3000);
                 //place cursor on tree
                 PlaceMouse(oakTreeAtBankBoothX, oakTreeAtBankBoothY);
+                //DoMouseLeftClick on tree (makes you walk to tree)
+                DoMouseLeftClick();
+                //Wait 35 seconds
+                WaitSomeTime(35000);
+            }
+        }
+
+        private void oakTreeButtonForSurface_Click(object sender, EventArgs e)
+        {
+            //start timer
+            //timer1.Start();
+
+            //Place character in a certain position (infront of bank booth)
+            //Click start
+
+            //put cursor on the tree. With the saved coordinates of tree
+            PlaceMouse(oakTreeAtBankBoothXSurface, oakTreeAtBankBoothYSurface);
+            //DoMouseLeftClick on tree (walks over and starts cutting)
+            DoMouseLeftClick();
+            //Wait 35 seconds
+            WaitSomeTime(35000);
+
+            //////while loop begins(waits for escape button)
+            while (true)
+            {
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 50 seconds
+                WaitSomeTime(50000);
+                ///////////inventory should be full/////////
+                //place cursor on bank booth
+                PlaceMouse(bankBoothAtOakTreeXSurface, bankBoothAtOakTreeYSurface);
+                //DoMouseLeftClick on bank booth(makes you walk towards booth and opens your bank)
+                DoMouseLeftClick();
+                //Wait 15 seconds 
+                WaitSomeTime(15000);
+                //move cursor to inventory on slot 1
+                PlaceMouse(inventorySlot1XSurface, inventorySlot1YSurface);
+                //DoMouseLeftClick on slot 1(to empty inventory)
+                DoMouseLeftClick();
+                //Wait 3 seconds 
+                WaitSomeTime(3000);
+                //place cursor on tree
+                PlaceMouse(oakTreeAtBankBoothXSurface, oakTreeAtBankBoothYSurface);
                 //DoMouseLeftClick on tree (makes you walk to tree)
                 DoMouseLeftClick();
                 //Wait 35 seconds

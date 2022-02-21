@@ -32,22 +32,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.oakTreeButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.timerLabel = new System.Windows.Forms.Label();
             this.willowTreeButton = new System.Windows.Forms.Button();
             this.YCoord = new System.Windows.Forms.Label();
             this.XCoord = new System.Windows.Forms.Label();
             this.YLabel = new System.Windows.Forms.Label();
             this.XLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.oakTreeButtonForSurface = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.oakTreeButtonForSurface);
             this.panel1.Controls.Add(this.oakTreeButton);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.timerLabel);
             this.panel1.Controls.Add(this.willowTreeButton);
             this.panel1.Controls.Add(this.YCoord);
             this.panel1.Controls.Add(this.XCoord);
@@ -72,21 +72,11 @@
             // 
             this.button1.Location = new System.Drawing.Point(149, 131);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Start Timer";
+            this.button1.Text = "Check Position";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.timerButton_Click);
-            // 
-            // timerLabel
-            // 
-            this.timerLabel.AutoSize = true;
-            this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerLabel.Location = new System.Drawing.Point(204, 27);
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(71, 25);
-            this.timerLabel.TabIndex = 8;
-            this.timerLabel.Text = "00:00";
             // 
             // willowTreeButton
             // 
@@ -143,6 +133,16 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // oakTreeButtonForSurface
+            // 
+            this.oakTreeButtonForSurface.Location = new System.Drawing.Point(149, 167);
+            this.oakTreeButtonForSurface.Name = "oakTreeButtonForSurface";
+            this.oakTreeButtonForSurface.Size = new System.Drawing.Size(121, 23);
+            this.oakTreeButtonForSurface.TabIndex = 11;
+            this.oakTreeButtonForSurface.Text = "Oak Tree for Surface";
+            this.oakTreeButtonForSurface.UseVisualStyleBackColor = true;
+            this.oakTreeButtonForSurface.Click += new System.EventHandler(this.oakTreeButtonForSurface_Click);
+            // 
             // MouseTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,10 +167,10 @@
         private System.Windows.Forms.Label YLabel;
         private System.Windows.Forms.Label XLabel;
         private System.Windows.Forms.Button willowTreeButton;
-        private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button oakTreeButton;
+        private System.Windows.Forms.Button oakTreeButtonForSurface;
     }
 }
 
