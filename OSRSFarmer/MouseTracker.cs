@@ -59,7 +59,7 @@ namespace OSRSFarmer
 
         // Oak Tree for Surface
 
-        int bankBoothAtBankBoothXSurface = 758;
+   /*     int bankBoothAtBankBoothXSurface = 758;
         int bankBoothAtBankBoothYSurface = 526;
 
         int inventorySlot1XSurface = 1398;
@@ -72,7 +72,23 @@ namespace OSRSFarmer
         int bankBoothAtOakTreeYSurface = 579;
 
         int oakTreeAtBankBoothXSurface = 1133;
-        int oakTreeAtBankBoothYSurface = 508;
+        int oakTreeAtBankBoothYSurface = 508;*/
+
+        int bankBoothAtBankBoothXSurface = 758;
+        int bankBoothAtBankBoothYSurface = 526;
+
+        int inventorySlot1XSurface = 1398;
+        int inventorySlot1YSurface = 766;
+
+        int oakTreeAtOakTreeXSurface = 860;
+        int oakTreeAtOakTreeYSurface = 531;
+
+        int bankBoothAtOakTreeXSurface = 464;
+        int bankBoothAtOakTreeYSurface = 554;
+
+        int oakTreeAtBankBoothXSurface = 1094;
+        int oakTreeAtBankBoothYSurface = 512;
+
 
 
 
@@ -258,14 +274,11 @@ namespace OSRSFarmer
                 DoMouseLeftClick();
                 //Wait 35 seconds
                 WaitSomeTime(35000);
-            }
+            }   
         }
 
         private void oakTreeButtonForSurface_Click(object sender, EventArgs e)
         {
-            //start timer
-            //timer1.Start();
-
             //Place character in a certain position (infront of bank booth)
             //Click start
 
@@ -273,8 +286,14 @@ namespace OSRSFarmer
             PlaceMouse(oakTreeAtBankBoothXSurface, oakTreeAtBankBoothYSurface);
             //DoMouseLeftClick on tree (walks over and starts cutting)
             DoMouseLeftClick();
-            //Wait 35 seconds
-            WaitSomeTime(35000);
+            //Wait 15 seconds
+            WaitSomeTime(15000);
+            //move cursor over tree
+            PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+            //DoMouseLeftClick on tree (walks over and starts cutting)
+            DoMouseLeftClick();
+            //Wait 30 seconds
+            WaitSomeTime(30000);
 
             //////while loop begins(waits for escape button)
             while (true)
@@ -283,26 +302,26 @@ namespace OSRSFarmer
                 PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 50 seconds
-                WaitSomeTime(50000);
+                //Wait 20 seconds
+                WaitSomeTime(20000);
                 //move cursor over tree
                 PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 50 seconds
-                WaitSomeTime(50000);
+                //Wait 20 seconds
+                WaitSomeTime(20000);
                 //move cursor over tree
                 PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 50 seconds
-                WaitSomeTime(50000);
+                //Wait 20 seconds
+                WaitSomeTime(20000);
                 //move cursor over tree
                 PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
                 DoMouseLeftClick();
-                //Wait 50 seconds
-                WaitSomeTime(50000);
+                //Wait 20 seconds
+                WaitSomeTime(20000);
                 ///////////inventory should be full/////////
                 //place cursor on bank booth
                 PlaceMouse(bankBoothAtOakTreeXSurface, bankBoothAtOakTreeYSurface);
