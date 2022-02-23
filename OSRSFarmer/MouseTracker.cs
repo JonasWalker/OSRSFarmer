@@ -343,5 +343,84 @@ namespace OSRSFarmer
                 WaitSomeTime(35000);
             }
         }
+
+        private void Fishing_Click(object sender, EventArgs e)
+        {
+            //Place character in a certain position (infront of bank booth)
+            //Click start
+
+            //put cursor on the tree. With the saved c  ordinates of tree
+            PlaceMouse(oakTreeAtBankBoothXSurface, oakTreeAtBankBoothYSurface);
+            //DoMouseLeftClick on tree (walks over and starts cutting)
+            DoMouseLeftClick();
+            //Wait 15 seconds
+            WaitSomeTime(10000);
+            //move cursor over tree
+            PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+            //DoMouseLeftClick on tree (walks over and starts cutting)
+            DoMouseLeftClick();
+            //Wait 30 seconds
+            WaitSomeTime(20000);
+
+            //////while loop begins(waits for escape button)
+            while (true)
+               {
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                //move cursor over tree
+                PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
+                //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
+                DoMouseLeftClick();
+                //Wait 20 seconds
+                WaitSomeTime(20000);
+                ///////////inventory should be full/////////
+                //place cursor on bank booth
+                PlaceMouse(bankBoothAtOakTreeXSurface, bankBoothAtOakTreeYSurface);
+                //DoMouseLeftClick on bank booth(makes you walk towards booth and opens your bank)
+                DoMouseLeftClick();
+                //Wait 15 seconds 
+                WaitSomeTime(15000);
+                //move cursor to inventory on slot 1
+                PlaceMouse(inventorySlot1XSurface, inventorySlot1YSurface);
+                //DoMouseLeftClick on slot 1(to empty inventory)
+                DoMouseLeftClick();
+                //Wait 3 seconds 
+                WaitSomeTime(3000);
+                //place cursor on tree
+                PlaceMouse(oakTreeAtBankBoothXSurface, oakTreeAtBankBoothYSurface);
+                //DoMouseLeftClick on tree (makes you walk to tree)
+                DoMouseLeftClick();
+                //Wait 35 seconds
+                WaitSomeTime(35000);
+            }
+        }
     }
 }

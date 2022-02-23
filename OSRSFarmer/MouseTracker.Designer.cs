@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.oakTreeButtonForSurface = new System.Windows.Forms.Button();
             this.oakTreeButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.willowTreeButton = new System.Windows.Forms.Button();
@@ -38,13 +39,14 @@
             this.YLabel = new System.Windows.Forms.Label();
             this.XLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.oakTreeButtonForSurface = new System.Windows.Forms.Button();
+            this.Fishing = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.Fishing);
             this.panel1.Controls.Add(this.oakTreeButtonForSurface);
             this.panel1.Controls.Add(this.oakTreeButton);
             this.panel1.Controls.Add(this.button1);
@@ -55,8 +57,18 @@
             this.panel1.Controls.Add(this.XLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 203);
+            this.panel1.Size = new System.Drawing.Size(341, 203);
             this.panel1.TabIndex = 0;
+            // 
+            // oakTreeButtonForSurface
+            // 
+            this.oakTreeButtonForSurface.Location = new System.Drawing.Point(107, 167);
+            this.oakTreeButtonForSurface.Name = "oakTreeButtonForSurface";
+            this.oakTreeButtonForSurface.Size = new System.Drawing.Size(121, 23);
+            this.oakTreeButtonForSurface.TabIndex = 11;
+            this.oakTreeButtonForSurface.Text = "Oak Tree for Surface";
+            this.oakTreeButtonForSurface.UseVisualStyleBackColor = true;
+            this.oakTreeButtonForSurface.Click += new System.EventHandler(this.oakTreeButtonForSurface_Click);
             // 
             // oakTreeButton
             // 
@@ -70,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(149, 131);
+            this.button1.Location = new System.Drawing.Point(206, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 9;
@@ -133,21 +145,21 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // oakTreeButtonForSurface
+            // Fishing
             // 
-            this.oakTreeButtonForSurface.Location = new System.Drawing.Point(149, 167);
-            this.oakTreeButtonForSurface.Name = "oakTreeButtonForSurface";
-            this.oakTreeButtonForSurface.Size = new System.Drawing.Size(121, 23);
-            this.oakTreeButtonForSurface.TabIndex = 11;
-            this.oakTreeButtonForSurface.Text = "Oak Tree for Surface";
-            this.oakTreeButtonForSurface.UseVisualStyleBackColor = true;
-            this.oakTreeButtonForSurface.Click += new System.EventHandler(this.oakTreeButtonForSurface_Click);
+            this.Fishing.Location = new System.Drawing.Point(234, 167);
+            this.Fishing.Name = "Fishing";
+            this.Fishing.Size = new System.Drawing.Size(75, 23);
+            this.Fishing.TabIndex = 12;
+            this.Fishing.Text = "Fishing";
+            this.Fishing.UseVisualStyleBackColor = true;
+            this.Fishing.Click += new System.EventHandler(this.Fishing_Click);
             // 
             // MouseTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 202);
+            this.ClientSize = new System.Drawing.Size(342, 202);
             this.Controls.Add(this.panel1);
             this.Name = "MouseTracker";
             this.Text = "MouseTracker";
@@ -171,6 +183,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button oakTreeButton;
         private System.Windows.Forms.Button oakTreeButtonForSurface;
+        private System.Windows.Forms.Button Fishing;
     }
 }
 
