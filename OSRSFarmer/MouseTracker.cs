@@ -59,20 +59,20 @@ namespace OSRSFarmer
 
         // Oak Tree for Surface
 
-   /*     int bankBoothAtBankBoothXSurface = 758;
-        int bankBoothAtBankBoothYSurface = 526;
+        /*     int bankBoothAtBankBoothXSurface = 758;
+             int bankBoothAtBankBoothYSurface = 526;
 
-        int inventorySlot1XSurface = 1398;
-        int inventorySlot1YSurface = 766;
+             int inventorySlot1XSurface = 1398;
+             int inventorySlot1YSurface = 766;
 
-        int oakTreeAtOakTreeXSurface = 860;
-        int oakTreeAtOakTreeYSurface = 560;
+             int oakTreeAtOakTreeXSurface = 860;
+             int oakTreeAtOakTreeYSurface = 560;
 
-        int bankBoothAtOakTreeXSurface = 450;
-        int bankBoothAtOakTreeYSurface = 579;
+             int bankBoothAtOakTreeXSurface = 450;
+             int bankBoothAtOakTreeYSurface = 579;
 
-        int oakTreeAtBankBoothXSurface = 1133;
-        int oakTreeAtBankBoothYSurface = 508;*/
+             int oakTreeAtBankBoothXSurface = 1133;
+             int oakTreeAtBankBoothYSurface = 508;*/
 
         int bankBoothAtBankBoothXSurface = 758;
         int bankBoothAtBankBoothYSurface = 526;
@@ -116,7 +116,7 @@ namespace OSRSFarmer
         }
 
         //Left Clicks
-        public  void DoMouseLeftClick()
+        public void DoMouseLeftClick()
         {
             WaitSomeTime(2000);
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
@@ -126,7 +126,7 @@ namespace OSRSFarmer
         private void PlaceMouse(int x, int y)
         {
             this.Cursor = new Cursor(Cursor.Current.Handle);
-            Cursor.Position = new Point(x,y);
+            Cursor.Position = new Point(x, y);
             XCoord.Text = Cursor.Position.X.ToString();
             YCoord.Text = Cursor.Position.Y.ToString();
         }
@@ -136,7 +136,7 @@ namespace OSRSFarmer
             System.Threading.Thread.Sleep(time);
         }
 
-        
+
 
         private void willowTreeButton_Click(object sender, EventArgs e)
         {
@@ -274,7 +274,7 @@ namespace OSRSFarmer
                 DoMouseLeftClick();
                 //Wait 35 seconds
                 WaitSomeTime(35000);
-            }   
+            }
         }
 
         private void oakTreeButtonForSurface_Click(object sender, EventArgs e)
@@ -364,7 +364,7 @@ namespace OSRSFarmer
 
             //////while loop begins(waits for escape button)
             while (true)
-               {
+            {
                 //move cursor over tree
                 PlaceMouse(oakTreeAtOakTreeXSurface, oakTreeAtOakTreeYSurface);
                 //DoMouseLeftClick on tree again(assuming the tree was cut down and spawned again)
@@ -420,6 +420,63 @@ namespace OSRSFarmer
                 DoMouseLeftClick();
                 //Wait 35 seconds
                 WaitSomeTime(35000);
+            }
+        }
+
+        private void Clicker_Click(object sender, EventArgs e)
+        {
+            int GEBankBoothAtGEBankBoothX = 778;
+            int GEBankBoothAtGEBankBoothY = 525;
+
+            int bigBonesInBankX = 831;
+            int bigBonesInBankY = 322;
+
+            int bankExitX = 896;
+            int bankExitY = 69;
+            //make sure to start with bones in inventory and right next to the bottom left bank booth in GE
+            while (true)
+            {
+                //slot 1
+                int tempX = 1400;
+                int tempY = 763;
+                for (int x = 0; x < 7; x++)
+                {
+                    //move cursor to inventory on slot 1
+                    PlaceMouse(tempX, tempY);
+                    DoMouseLeftClick();
+                    //Wait 1 seconds 
+                    WaitSomeTime(1000);
+                    //move to slot2
+                    PlaceMouse(tempX + 40, tempY);
+                    DoMouseLeftClick();
+                    //Wait 1 seconds 
+                    WaitSomeTime(1000);
+                    //move to slot3
+                    PlaceMouse(tempX + 80, tempY);
+                    DoMouseLeftClick();
+                    //Wait 1 seconds 
+                    WaitSomeTime(1000);
+                    ///move to slot4
+                    PlaceMouse(tempX + 120, tempY);
+                    DoMouseLeftClick();
+                    //Wait 1 seconds 
+                    WaitSomeTime(1000);
+                    //move to next row
+                    //y + 35
+                    tempY += 35;
+                }
+                PlaceMouse(GEBankBoothAtGEBankBoothX, GEBankBoothAtGEBankBoothY);
+                DoMouseLeftClick();
+                //Wait 1 seconds 
+                WaitSomeTime(1000);
+                PlaceMouse(bigBonesInBankX, bigBonesInBankY);
+                DoMouseLeftClick();
+                //Wait 1 seconds 
+                WaitSomeTime(1000);
+                PlaceMouse(bankExitX, bankExitY);
+                DoMouseLeftClick();
+                //Wait 1 seconds 
+                WaitSomeTime(1000);
             }
         }
     }
